@@ -3,6 +3,8 @@ require 'state_machine'
 
 class SodaTransaction
 
+  attr_accessor :selection
+
   state_machine :soda_state, initial: :awaiting_selection do
 
     event :button_press do
@@ -13,6 +15,11 @@ class SodaTransaction
       transition :dispense_soda => :labeled
     end
 
+  end
+
+  def button_press(selection)
+    @selection = selection
+    super
   end
 
 end

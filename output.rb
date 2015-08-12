@@ -12,3 +12,8 @@ puts sm.soda_state
 sm.labeling
 puts sm.soda_state
 #=> labeled
+
+sm.button_press('coca')
+puts sm.selection
+puts sm.soda_state
+#=> dispense soda
