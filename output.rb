@@ -1,4 +1,14 @@
-require 'vehicle'
+require './soda_transaction'
+# require './vehicle'
 
-vh = Vehicle.new
-puts vh
+sm = SodaTransaction.new
+puts sm.soda_state
+#=> awaiting selection
+
+sm.button_press
+puts sm.soda_state
+#=> dispense soda
+
+sm.labeling
+puts sm.soda_state
+#=> labeled
