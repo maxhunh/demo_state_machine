@@ -1,5 +1,4 @@
 require './soda_transaction'
-# require './vehicle'
 
 sm = SodaTransaction.new
 puts sm.soda_state
@@ -11,9 +10,17 @@ puts sm.soda_state
 
 sm.labeling
 puts sm.soda_state
-#=> labeled
+#=> checked
 
+# OVERWRITE BUTTON_PRESS
 sm.button_press('coca')
 puts sm.selection
 puts sm.soda_state
 #=> dispense soda
+
+
+# USING HOOK
+sm.button_press('coca')
+puts sm.selection
+puts sm.soda_state
+#=> tested_v1
